@@ -1,4 +1,13 @@
-https://github.com/nasan92/github-actions-continuous-delivery-azure/tree/staging-workflow/.github/CHANGETHISname: Staging deployment
+env:
+  DOCKER_IMAGE_NAME: nasan92-azure-ttt
+  IMAGE_REGISTRY_URL: docker.pkg.github.com
+  #################################################
+  ### USER PROVIDED VALUES ARE REQUIRED BELOW   ###
+  #################################################
+  #################################################
+  ### REPLACE USERNAME WITH GH USERNAME         ###
+  AZURE_WEBAPP_NAME: nasan92-ttt-app
+  #################################################
 
 name: Stage the app
 
@@ -9,3 +18,4 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+     if: contains(github.event.pull_request.labels.*.name, 'stage')
