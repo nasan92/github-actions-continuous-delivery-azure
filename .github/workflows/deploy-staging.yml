@@ -1,0 +1,11 @@
+https://github.com/nasan92/github-actions-continuous-delivery-azure/tree/staging-workflow/.github/CHANGETHISname: Staging deployment
+
+name: Stage the app
+
+on: 
+  pull_request:
+    types: [labeled]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
